@@ -1,0 +1,12 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 1000
+
+    gpio_controller:
+      type: forward_command_controller/ForwardCommandController
+
+gpio_controller:
+  ros__parameters:
+    joints:
+      - joint_gpio
+    interface_name: dig.out.byte0

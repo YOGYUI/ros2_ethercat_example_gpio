@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_formet3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>ros2_ethercat_example_gpio</name>
+  <version>0.0.1</version>
+  <description>YOGYUI ROS2 EtherCAT GPIO Example Project</description>
+  <maintainer email="lee2002w@gmail.com">YOGYUI</maintainer>
+  <author email="lee2002w@gmail.com">YOGYUI</author>
+  <license>YOGYUI license</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <build_depend>backward_ros</build_depend>
+
+  <build_depend>joint_state_publisher</build_depend>
+  <build_depend>joint_state_publisher_gui</build_depend>
+  <build_depend>tf2_ros</build_depend>
+  <build_depend>xacro</build_depend>
+  <build_depend>gazebo_ros_control</build_depend>
+  <build_depend>controller_manager</build_depend>
+  <build_depend>robot_state_publisher</build_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

@@ -1,0 +1,8 @@
+$ sudo ethercatctl start
+$ ros2 launch ros2_ethercat_example_gpio init.launch.py
+$ ros2 topic list
+$ ros2 control list_controllers
+$ ros2 control list_hardware_components
+$ ros2 control list_hardware_interfaces
+
+$ ros2 topic pub /gpio_controller/commands std_msgs/msg/Float64MultiArray "{data: [255]}" -1

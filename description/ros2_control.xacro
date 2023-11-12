@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <ros2_control name="ec_test" type="system">
+    <hardware>
+      <plugin>ethercat_driver/EthercatDriver</plugin>
+        <param name="master_id">0</param>
+        <param name="control_frequency">1000</param>
+      </hardware>
+
+    <gpio name="joint_gpio">
+      <command_interface name="dig.out.byte0"/>
+      <command_interface name="dig.out.byte1"/>
+      <command_interface name="dig.out.byte2"/>
+      <command_interface name="dig.out.byte3"/>
+      <ec_module name="FB1111">
+        <plugin>ethercat_generic_plugins/GenericEcSlave</plugin>
+        <param name="alias">0</param>
+        <param name="position">0</param>
+        <param name="slave_config">$(find ros2_ethercat_example_gpio)/config/beckhoff_fb1111.yaml</param>
+      </ec_module>
+    </gpio>
+  </ros2_control>
+</robot>
