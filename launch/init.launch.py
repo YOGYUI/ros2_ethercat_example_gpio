@@ -36,7 +36,9 @@ def generate_launch_description():
 
     # spawn controllers node
     controller_names = [
-        "gpio_controller"
+        "joint_state_broadcaster",
+        "output_controller0",
+        "output_controller1",
     ]
     for name in controller_names:
         node = Node(

@@ -1,12 +1,33 @@
-controller_manager:
-  ros__parameters:
-    update_rate: 1000
+/**:
+  controller_manager:
+    ros__parameters:
+      update_rate: 1000
 
-    gpio_controller:
-      type: forward_command_controller/ForwardCommandController
+      joint_state_broadcaster:
+          type: joint_state_broadcaster/JointStateBroadcaster
 
-gpio_controller:
-  ros__parameters:
-    joints:
-      - joint_gpio
-    interface_name: dig.out.byte0
+      output_controller0:
+        type: forward_command_controller/ForwardCommandController
+      
+      output_controller1:
+        type: forward_command_controller/ForwardCommandController
+
+/**:
+  joint_state_broadcaster:
+    ros__parameters:
+      joints:
+        - joint_gpio
+
+/**:
+  output_controller0:
+    ros__parameters:
+      joints:
+        - joint_gpio
+      interface_name: dig.out.byte0
+
+/**:
+  output_controller1:
+    ros__parameters:
+      joints:
+        - joint_gpio
+      interface_name: dig.out.byte1

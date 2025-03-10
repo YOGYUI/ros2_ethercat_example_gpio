@@ -2,21 +2,25 @@ vendor_id: 0x00000002
 product_id: 0x04570862
 # assign_activate: 0x0100
 assign_activate: 0x00
+
 rpdo:
   - index: 0x1a00
     channels:
       - {index: 0x3101, sub_index: 0x01, type: uint8, command_interface: dig.out.byte0}
-  #- index: 0x1a01
-  #  channels:
-  #    - {index: 0x3101, sub_index: 0x02, type: uint8, command_interface: dig.out.byte1}
-  #- index: 0x1a02
-  #  channels:
-  #    - {index: 0x3101, sub_index: 0x03, type: uint8, command_interface: dig.out.byte2}
-  #- index: 0x1a03
-  #  channels:
-  #    - {index: 0x3101, sub_index: 0x04, type: uint8, command_interface: dig.out.byte3}
+  - index: 0x1a01
+    channels:
+      - {index: 0x3101, sub_index: 0x02, type: uint8, command_interface: dig.out.byte1}
+
+tpdo:
+  - index: 0x1600
+    channels:
+      - {index: 0x3001, sub_index: 0x01, type: uint8, state_interface: dig.in.byte0}
+  - index: 0x1601
+    channels:
+      - {index: 0x3001, sub_index: 0x02, type: uint8, state_interface: dig.in.byte1}
+  
 sm:
   - {index: 0, type: output, pdo: rpdo, watchdog: enable}
-  #- {index: 1, type: output, pdo: rpdo, watchdog: enable}
-  #- {index: 2, type: output, pdo: rpdo, watchdog: enable}
-  #- {index: 3, type: output, pdo: rpdo, watchdog: enable}
+  - {index: 1, type: output, pdo: rpdo, watchdog: enable}
+  - {index: 2, type: input,  pdo: tpdo, watchdog: enable}
+  - {index: 3, type: input,  pdo: tpdo, watchdog: enable}

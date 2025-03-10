@@ -10,8 +10,8 @@
     <gpio name="joint_gpio">
       <command_interface name="dig.out.byte0"/>
       <command_interface name="dig.out.byte1"/>
-      <command_interface name="dig.out.byte2"/>
-      <command_interface name="dig.out.byte3"/>
+      <state_interface name="dig.in.byte0"/>
+      <state_interface name="dig.in.byte1"/>
       <ec_module name="FB1111">
         <plugin>ethercat_generic_plugins/GenericEcSlave</plugin>
         <param name="alias">0</param>
