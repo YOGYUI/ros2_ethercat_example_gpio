@@ -20,7 +20,7 @@ tpdo:
       - {index: 0x3001, sub_index: 0x02, type: uint8, state_interface: dig.in.byte1}
   
 sm:
-  - {index: 0, type: output, pdo: rpdo, watchdog: enable}
-  - {index: 1, type: output, pdo: rpdo, watchdog: enable}
-  - {index: 2, type: input,  pdo: tpdo, watchdog: enable}
-  - {index: 3, type: input,  pdo: tpdo, watchdog: enable}
+  - {index: 0, type: output, pdo: rpdo, watchdog: enable }
+  - {index: 1, type: output, pdo: rpdo, watchdog: enable }
+  - {index: 2, type: input,  pdo: tpdo, watchdog: enable }
+  # - {index: 3, type: input,  pdo: ~,    watchdog: disable}
